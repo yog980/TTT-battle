@@ -1,0 +1,7 @@
+<button *ngIf="!value" [disabled]="disableButton" [ngStyle]="{'background-color':disableButton?'#d12a3b':''}"
+(mouseenter)='over()' (mouseleave)='out()'>
+  <span *ngIf="!isHidden && !disableButton" class="hoverText">{{ player }}</span>
+</button>
+<button *ngIf="value == 'X'" style="background-color: #a973bd">{{value}}</button>
+<button *ngIf="value == 'O'" style="background-color: #856436">{{value}}</button>
+<!-- <button [ngStyle]="{'background-color': buttonBg}" (onClick)="setBgColor(value)">{{ value }}</button> -->

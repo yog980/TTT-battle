@@ -1,0 +1,15 @@
+button {
+  width: 200px;
+  height: 200px;
+  font-size: 200px;
+ }
+
+ button:hover {
+  cursor: pointer;
+ }
+
+ .hoverText {
+  opacity: 0.6;
+  font-size: 200px;
+  color: aqua;
+ }

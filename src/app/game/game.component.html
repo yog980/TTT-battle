@@ -1,0 +1,22 @@
+<div class="center-items">
+  <h2 *ngIf="homePage" class="message" style="font-size:100px;">TTT Battle: The Ultimate Game</h2>
+  <h2 *ngIf="!winner && !isDraw && !homePage" class="message">{{ player }}`s turn</h2>
+  <!-- <h2 *ngIf="winner" style="color:#ebe010;font-size:100px;" id="winner">Winner is {{ winner }}</h2> -->
+  <!-- <h2 *ngIf="isDraw" style="color:#a8072f;font-size:100px;" >Draw !!!</h2> -->
+  <button *ngIf="homePage" outline (click) = "newGame()">Start New Game</button>
+  <main *ngIf="!homePage">
+    <app-board
+      *ngFor="let val of squares; let i = index"
+      [player]="player"
+      [value]="val"
+      [disableButton]="disableButton"
+      (click)="makeMove(i)"
+    >
+    </app-board>
+  </main>
+  <div class="winning-message" id="winnerMessage" *ngIf="winner || isDraw">
+    <div data-winning-message-text *ngIf="winner">{{ winner }}`s Wins!</div>
+    <div style="color:red;" *ngIf="isDraw">Match Draws !!</div>
+    <button id="restartButton" (click)="newGame()">Restart</button>
+</div>
+</div>
